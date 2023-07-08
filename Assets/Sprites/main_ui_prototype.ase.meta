@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638243809357421031
+  platformSettingsDirtyTick: 638243833191951683
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -247,8 +247,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 48
+      x: 268
+      y: 135
       width: 59
       height: 8
     spriteID: 87724f9368380eb488a4c1993f699f75
@@ -260,7 +260,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: main_ui_prototype_10
+  - name: logs_title
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -287,8 +287,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 436
-      y: 64
+      x: 335
+      y: 135
       width: 59
       height: 8
     spriteID: 86d22f5bd7ab59044aca34a67a7b0728
@@ -332,6 +332,46 @@ ScriptedImporter:
       width: 59
       height: 36
     spriteID: 0ce684ee5c46d394db8d2abc5332f637
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: ink_status
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 436
+      y: 48
+      width: 25
+      height: 28
+    spriteID: 9993f7d31a18e494aa1fc53ebdb5c5ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: paper_status
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 469
+      y: 48
+      width: 23
+      height: 5
+    spriteID: 6de6ed07e73fd984c8fe0c12d0c254dc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -478,7 +518,41 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   - layerIndex: 8
-    guid: -1944999484
+    guid: 58324310
+    name: Printer Info Ink
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Printer Info Ink
+      frameIndex: 0
+      cellRect:
+        x: 225
+        y: 7
+        width: 25
+        height: 28
+      spriteId: eac71632353b18e4fac84c56e59f1d97
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 593148421
+    name: Printer Info Paper
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Printer Info Paper
+      frameIndex: 0
+      cellRect:
+        x: 198
+        y: 29
+        width: 23
+        height: 5
+      spriteId: f8052ae933d79f349b04e037ef420f34
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: -1944999482
     name: Paper
     layerFlags: 3
     layerType: 0
@@ -491,11 +565,11 @@ ScriptedImporter:
         y: 34
         width: 160
         height: 79
-      spriteId: bc1eb664e7a8dd549a47c84f9fd8e893
+      spriteId: 110cdd276c751d7448dee5ef9f1fd5b7
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 9
-    guid: 188792317
+  - layerIndex: 11
+    guid: 188792319
     name: Tabs Cam enabled
     layerFlags: 3
     layerType: 0
@@ -508,7 +582,7 @@ ScriptedImporter:
         y: 38
         width: 59
         height: 8
-      spriteId: 48944f02ec41d224ca6f9bd473acbad1
+      spriteId: e206c1553a92a164a9773df317a2e506
     linkedCells: []
     parentIndex: -1
   platformSettings:
