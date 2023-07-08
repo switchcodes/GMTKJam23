@@ -1,7 +1,565 @@
 fileFormatVersion: 2
 guid: 725e134db17b93d4097be09567c610d7
-DefaultImporter:
+ScriptedImporter:
+  internalIDToNameTable: []
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 1
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638243809357421031
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: main_ui_prototype
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 256
+      height: 144
+    spriteID: ed9c53f8d0e47234ca7767c8cfa984b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  spriteSheetImportData:
+  - name: background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 256
+      height: 144
+    spriteID: dbba1161e7ab44141a290e283361d2dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: timer_bar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 120
+      width: 151
+      height: 7
+    spriteID: 5e7b3571b1ef9aa4f8705623b231399f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: main_ui_prototype_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 91
+      width: 179
+      height: 21
+    spriteID: 92655e5492563974589bb03c41d0a81d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: paper
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 4
+      width: 160
+      height: 79
+    spriteID: b695a253d2049f44392573fbfcf2af9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: queue_title
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 455
+      y: 91
+      width: 26
+      height: 6
+    spriteID: 1f027e24c2aac7f428eab5a41c6e8ae7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: tabs_info_enabled
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 436
+      y: 48
+      width: 59
+      height: 8
+    spriteID: 87724f9368380eb488a4c1993f699f75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: main_ui_prototype_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 487
+      y: 105
+      width: 21
+      height: 5
+    spriteID: ad221d7c5b784894ab2e378d822aabd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: tabs_cam_enabled
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 436
+      y: 64
+      width: 59
+      height: 8
+    spriteID: 86d22f5bd7ab59044aca34a67a7b0728
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: timer_title
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 455
+      y: 105
+      width: 24
+      height: 5
+    spriteID: b4c7bdf99e870a34cbe1c08b246fe0bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: main_ui_prototype_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 436
+      y: 4
+      width: 59
+      height: 36
+    spriteID: 0ce684ee5c46d394db8d2abc5332f637
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1021688250
+    name: Background
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Background
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 256
+        height: 144
+      spriteId: 41d03dcfef4dc814f9c9e38782cb5bf5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 1350594478
+    name: Logs
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Logs
+      frameIndex: 0
+      cellRect:
+        x: 197
+        y: 133
+        width: 21
+        height: 5
+      spriteId: 7f5f76fe30cb71148958785c270bc2ee
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 224980491
+    name: Queue
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Queue
+      frameIndex: 0
+      cellRect:
+        x: 194
+        y: 50
+        width: 59
+        height: 36
+      spriteId: 567fd6919661d484aafd4d0875218801
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1387228126
+    name: Queue Title
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Queue Title
+      frameIndex: 0
+      cellRect:
+        x: 197
+        y: 77
+        width: 26
+        height: 6
+      spriteId: f3172f75f3897734aaea6e7de85696bd
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: -1018640013
+    name: Tabs Info Enabled
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Tabs Info Enabled
+      frameIndex: 0
+      cellRect:
+        x: 194
+        y: 38
+        width: 59
+        height: 8
+      spriteId: b753c18954acb4a46b7aeebbf9e31825
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: -290959622
+    name: Timer
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Timer
+      frameIndex: 0
+      cellRect:
+        x: 34
+        y: 132
+        width: 151
+        height: 7
+      spriteId: d3736620799cd384f99e019eabaafb7d
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -946411107
+    name: Timer Title
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Timer Title
+      frameIndex: 0
+      cellRect:
+        x: 6
+        y: 133
+        width: 24
+        height: 5
+      spriteId: afc1dbd9a9b3ba146a49de0a4cc52d10
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: 2099246666
+    name: Buttons
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Buttons
+      frameIndex: 0
+      cellRect:
+        x: 7
+        y: 6
+        width: 179
+        height: 21
+      spriteId: f907a6d0f1d54a2478846fbb784c2108
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -1944999484
+    name: Paper
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Paper
+      frameIndex: 0
+      cellRect:
+        x: 16
+        y: 34
+        width: 160
+        height: 79
+      spriteId: bc1eb664e7a8dd549a47c84f9fd8e893
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 188792317
+    name: Tabs Cam enabled
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Tabs Cam enabled
+      frameIndex: 0
+      cellRect:
+        x: 194
+        y: 38
+        width: 59
+        height: 8
+      spriteId: 48944f02ec41d224ca6f9bd473acbad1
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 256, y: 144}
