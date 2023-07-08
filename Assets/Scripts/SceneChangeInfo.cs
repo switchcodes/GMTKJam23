@@ -8,4 +8,6 @@
     }
         
     public static Difficulty Information { get; set; }
+
+    public static float Volume { get; set; } = 0.25f;
 }
