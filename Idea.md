@@ -10,4 +10,11 @@ Theme: Roles Reversed
 - Automatische Türe, du entscheidest wen du reinlässt
 - reverse tower defence
 - ## you are the printer (game depends on your morals)
+  - police raids
+  - getting trashed
+  - replaced
+  - have balance
+  - dont show moral meter
+  - gewichtung tasks
+  - 
 - 
