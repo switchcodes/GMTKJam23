@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638243833191951683
+  platformSettingsDirtyTick: 638244221510652765
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -367,11 +367,71 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 469
+      x: 483
       y: 48
       width: 23
       height: 5
     spriteID: 6de6ed07e73fd984c8fe0c12d0c254dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: scrollbar_area
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 469
+      y: 48
+      width: 6
+      height: 32
+    spriteID: edc8b11911da0da4ea029d442922a108
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: scrollbar_handle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 487
+      y: 90
+      width: 6
+      height: 7
+    spriteID: 89502cda50a4b2943b1eea8d65bbdebd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: logs_scrollbar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 156
+      width: 6
+      height: 47
+    spriteID: c8b50800e89641544b5ecfc8a0c5cb66
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -535,7 +595,58 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   - layerIndex: 9
-    guid: 593148421
+    guid: 1098269557
+    name: Scrollbar
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Scrollbar
+      frameIndex: 0
+      cellRect:
+        x: 245
+        y: 52
+        width: 6
+        height: 32
+      spriteId: 2b071207b55ab124bbc205335fdf0bc8
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: 2002791660
+    name: ScrollbarHandle
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ScrollbarHandle
+      frameIndex: 0
+      cellRect:
+        x: 247
+        y: 54
+        width: 2
+        height: 5
+      spriteId: c104838ab0857a647b7a3e855949d332
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 11
+    guid: 1716915652
+    name: LogsScrollBar
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: LogsScrollBar
+      frameIndex: 0
+      cellRect:
+        x: 245
+        y: 92
+        width: 6
+        height: 47
+      spriteId: 2f70e419b5432374683f74f1a399de27
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 12
+    guid: 593148416
     name: Printer Info Paper
     layerFlags: 3
     layerType: 0
@@ -548,11 +659,11 @@ ScriptedImporter:
         y: 29
         width: 23
         height: 5
-      spriteId: f8052ae933d79f349b04e037ef420f34
+      spriteId: 9067f9c3dfafdf645b98760c05ccacf9
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 10
-    guid: -1944999482
+  - layerIndex: 13
+    guid: -1944999487
     name: Paper
     layerFlags: 3
     layerType: 0
@@ -565,11 +676,11 @@ ScriptedImporter:
         y: 34
         width: 160
         height: 79
-      spriteId: 110cdd276c751d7448dee5ef9f1fd5b7
+      spriteId: b6ecd0962984faa4abf57a8e3fa162b4
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 11
-    guid: 188792319
+  - layerIndex: 14
+    guid: 188792314
     name: Tabs Cam enabled
     layerFlags: 3
     layerType: 0
@@ -582,7 +693,7 @@ ScriptedImporter:
         y: 38
         width: 59
         height: 8
-      spriteId: e206c1553a92a164a9773df317a2e506
+      spriteId: 499e5ee691be874409333e7bbd7fc6f3
     linkedCells: []
     parentIndex: -1
   platformSettings:
