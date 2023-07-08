@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638244221510652765
+  platformSettingsDirtyTick: 638244297745602736
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -240,7 +240,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: tabs_info_enabled
+  - name: tabs_cam_disabled
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -249,7 +249,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 268
       y: 135
-      width: 59
+      width: 29
       height: 8
     spriteID: 87724f9368380eb488a4c1993f699f75
     spriteBone: []
@@ -289,7 +289,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 335
       y: 135
-      width: 59
+      width: 29
       height: 8
     spriteID: 86d22f5bd7ab59044aca34a67a7b0728
     spriteBone: []
@@ -384,7 +384,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 1, y: 1, z: 1, w: 1}
     rect:
       serializedVersion: 2
       x: 469
@@ -432,6 +432,66 @@ ScriptedImporter:
       width: 6
       height: 47
     spriteID: c8b50800e89641544b5ecfc8a0c5cb66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: tabs_info_enabled
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 298
+      y: 135
+      width: 29
+      height: 8
+    spriteID: 9e578d18a7435da4b9576c73389f359b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: tabs_border
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 297
+      y: 135
+      width: 1
+      height: 8
+    spriteID: 059f763a8ee6b604f894dbe01d1e5da5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: tabs_info_disabled
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 365
+      y: 135
+      width: 29
+      height: 8
+    spriteID: 1c35f6b181cbce94d98c2a860424c9d5
     spriteBone: []
     spriteOutline: []
     vertices: []
