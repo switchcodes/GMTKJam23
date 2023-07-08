@@ -7,6 +7,7 @@ public class Logger : MonoBehaviour {
 	public TextMeshProUGUI logText;
 	
 	public void Log(string message) {
-		logText.text += message + "\n";
+		var oldText = logText.text;
+		logText.text = message + "\n" + oldText;
 	}
 }

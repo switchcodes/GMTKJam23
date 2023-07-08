@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638243772607615610
+  platformSettingsDirtyTick: 638244540157472558
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -184,13 +184,13 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 2, y: 9, z: 2, w: 10}
     rect:
       serializedVersion: 2
       x: 4
       y: 33
       width: 37
-      height: 21
+      height: 19
     spriteID: 5c023a89abdcbb943b4d75e59ae82e8c
     spriteBone: []
     spriteOutline: []
@@ -204,7 +204,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 2, y: 10, z: 2, w: 11}
     rect:
       serializedVersion: 2
       x: 4
@@ -222,28 +222,28 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -821172277
-    name: button_refuse
+    guid: -373963286
+    name: button_red
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: button_refuse_Frame_0
+    - name: button_red_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 37
         height: 21
-      spriteId: ac67fd752288c7743a4081b0f66be341
-    - name: button_refuse_Frame_1
+      spriteId: 745257220b100824697f80e92e782943
+    - name: button_red_Frame_1
       frameIndex: 1
       cellRect:
         x: 0
         y: 0
         width: 37
         height: 19
-      spriteId: 406ef43d685302041b267f54f67f89a0
+      spriteId: e750535a4452b2f40859a8964d4582a8
     linkedCells: []
     parentIndex: -1
   platformSettings:
