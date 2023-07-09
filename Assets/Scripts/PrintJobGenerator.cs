@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -13,10 +14,11 @@ public class PrintJobGenerator : MonoBehaviour {
 	public GameObject printJobPrefab;
 	public GameObject printJobContainer;
 	public JobController jobController;
+	public TextMeshProUGUI queueTitle;
 
 	public float minTimeToNextJob = 5;
 	public float maxTimeToNextJob = 10;
-	public int maxActiveJobs = 10;
+	
 	private float _timer;
 	private float _timeToNextJob;
 
@@ -35,14 +37,17 @@ public class PrintJobGenerator : MonoBehaviour {
 
 	// Update is called once per frame
 	private void Update() {
+		var currentJobsInQueue = jobController.queueFiles.Count;
+		var color = currentJobsInQueue > jobController.maxActiveJobs * 0.75f ? "<color=#FF5859>" : "<color=#97FF75>";
+		queueTitle.text = $"Queue {color}<size=6>({jobController.queueFiles.Count}/{jobController.maxActiveJobs})</size></color>";
 		_timer += Time.deltaTime;
-		if (jobController.queueFiles.Count == 0) _timeToNextJob = 1;
-		if (_timer < _timeToNextJob || jobController.jobs.Count > maxActiveJobs) return;
+		if (currentJobsInQueue == 1) _timeToNextJob = 1;
+		if (_timer < _timeToNextJob || jobController.jobs.Count >= jobController.maxActiveJobs) return;
 		var jobs = Enum.GetValues(typeof(PrintJobEnum));
 		GenerateJob((PrintJobEnum)jobs.GetValue(Random.Range(0, jobs.Length - 1)));
 		_timer = 0;
 		var timeModifier = jobController.printerStatus.printCount / 100f;
-		_timeToNextJob = Random.Range(Math.Min(minTimeToNextJob - timeModifier, 1), Math.Min(maxTimeToNextJob - timeModifier, 2));
+		_timeToNextJob = Random.Range(Math.Max(minTimeToNextJob - timeModifier, 1), Math.Max(maxTimeToNextJob - timeModifier, 2));
 	}
 
 	private void GenerateJob(PrintJobEnum jobType) {
