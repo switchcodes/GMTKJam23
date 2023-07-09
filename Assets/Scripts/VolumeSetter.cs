@@ -16,10 +16,32 @@ public class VolumeSetter : MonoBehaviour
     public void showVolume()
     {
         shownVolume.text = Convert.ToInt32(_soundVolumeSlider.value * 100f).ToString() + "%";
+        foreach (Transform item in GameObject.FindGameObjectWithTag("AudioManagerLoaded").transform)
+        {
+            if (item.gameObject.name == "ButtonSFX1" || item.gameObject.name == "ButtonSFX2")
+            {
+                item.gameObject.GetComponent<AudioSource>().volume = (Mathf.Round(_soundVolumeSlider.value * 100f) / 100f) / 3f;
+            }
+            else
+            {
+                item.gameObject.GetComponent<AudioSource>().volume = Mathf.Round(_soundVolumeSlider.value * 100f) / 100f;
+            }
+        }
     }
     
     public void setVolume()
     {
         SceneChangeInfo.Volume = Mathf.Round(_soundVolumeSlider.value * 100f) / 100f;
+        foreach (Transform item in GameObject.FindGameObjectWithTag("AudioManagerLoaded").transform)
+        {
+            if (item.gameObject.name == "ButtonSFX1" || item.gameObject.name == "ButtonSFX2")
+            {
+                item.gameObject.GetComponent<AudioSource>().volume = (Mathf.Round(_soundVolumeSlider.value * 100f) / 100f) / 3f;
+            }
+            else
+            {
+                item.gameObject.GetComponent<AudioSource>().volume = Mathf.Round(_soundVolumeSlider.value * 100f) / 100f;
+            }
+        }
     }
 }
