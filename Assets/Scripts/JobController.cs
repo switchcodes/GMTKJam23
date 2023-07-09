@@ -39,7 +39,7 @@ public class JobController : MonoBehaviour {
 	private FilmGrain _filmGrain;
 	private LensDistortion _lensDistortion;
 
-	[Header("Modifiers")] public float difficultyModifier = 1f;
+	[Header("Modifiers")] public float difficultyModifier = 5f;
 	public float complaintThreshold = 4f;
 	public int maxActiveJobs = 10;
 	public int maxTime = 30;
@@ -74,14 +74,14 @@ public class JobController : MonoBehaviour {
 		if (overrideDifficulty) return;
 		switch (SceneChangeInfo.Difficulty) {
 			case SceneChangeInfo.DifficultyEnum.Easy:
-				difficultyModifier = 0.8f;
+				difficultyModifier = 4f;
 				complaintThreshold = 3f;
 				printerStatus.maxPaper = (int)Math.Floor(printerStatus.maxPaper * 1.5);
 				maxHealth *= 2;
 				maxTime *= 2;
 				break;
 			case SceneChangeInfo.DifficultyEnum.Hard:
-				difficultyModifier = 1.2f;
+				difficultyModifier = 6f;
 				complaintThreshold = 5f;
 				printerStatus.maxPaper = (int)Math.Floor(printerStatus.maxPaper * 0.5);
 				printerStatus.paperLevel = (int)Math.Floor(printerStatus.maxPaper * 0.5);
@@ -109,7 +109,7 @@ public class JobController : MonoBehaviour {
 		var currentJobsInQueue = queueFiles.Count;
 		var isQueueAlmostFull = currentJobsInQueue > maxActiveJobs * 0.75f;
 		if (isQueueAlmostFull) {
-			var timeModifier = currentJobsInQueue / (maxActiveJobs * 0.75f);
+			var timeModifier = (currentJobsInQueue / (maxActiveJobs * 0.75f)) * 2;
 			_timer -= Time.deltaTime * timeModifier;
 			if (_timer <= 0) {
 				TriggerGameOver(OUT_OF_TIME);
@@ -118,7 +118,7 @@ public class JobController : MonoBehaviour {
 			timerText.color = Color.red;
 		}
 		else {
-			var timeModifier = 1 - currentJobsInQueue / (maxActiveJobs * 0.75f);
+			var timeModifier = (1 - currentJobsInQueue / (maxActiveJobs * 0.75f)) * 2;
 			_timer = Math.Min(_timer + Time.deltaTime * timeModifier, maxTime);
 			timerText.text = "NOMINAL";
 			timerText.color = Color.green;

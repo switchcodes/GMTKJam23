@@ -6,11 +6,11 @@ public enum PrintJobEnum
 	Counterfeit,
 	FakeNews,
 	MissingCat,
-	ElectionCampaign,
+	Election,
 	Newspaper,
 	CeaseAndDesist,
-	JobTermination,
-	LordCertificate,
+	Termination,
+	Lordship,
 	PianoNotes,
 	Confidential
 }

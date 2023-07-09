@@ -8,6 +8,7 @@ TagManager:
   - AudioManager
   - AudioManagerLoaded
   - UIButton
+  - GameButton
   layers:
   - Default
   - TransparentFX

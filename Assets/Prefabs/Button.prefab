@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2247711612187712656}
   m_Layer: 5
   m_Name: ButtonSprite
-  m_TagString: Untagged
+  m_TagString: GameButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

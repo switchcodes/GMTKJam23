@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour {
@@ -14,14 +15,27 @@ public class Tutorial : MonoBehaviour {
 		_currentPart = tutorialParts[_currentPartIndex];
 		_image.sprite = _currentPart;
 	}
-	
+
 	public void Next() {
-		_currentPart = tutorialParts[_currentPartIndex++];
-		_image.sprite = _currentPart;
+		_currentPartIndex++;
+		Debug.Log(_currentPartIndex);
+		if (_currentPartIndex >= tutorialParts.Length) {
+			SceneManager.LoadScene("SampleScene");
+		}
+		else {
+			_currentPart = tutorialParts[_currentPartIndex];
+			_image.sprite = _currentPart;	
+		}
 	}
 
 	public void Back() {
-		_currentPart = tutorialParts[_currentPartIndex--];
-		_image.sprite = _currentPart;
+		_currentPartIndex--;
+		if (_currentPartIndex <= 0) {
+			SceneManager.LoadScene("TitleScreen");
+		}
+		else {
+			_currentPart = tutorialParts[_currentPartIndex];
+			_image.sprite = _currentPart;	
+		}
 	}
 }
