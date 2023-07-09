@@ -33,20 +33,20 @@ public class JobController : MonoBehaviour {
 	// Start is called before the first frame update
 	private void Awake() {
 		if (overrideDifficulty) return;
-		switch (SceneChangeInfo.Information) {
-			case SceneChangeInfo.Difficulty.Easy:
+		switch (SceneChangeInfo.Difficulty) {
+			case SceneChangeInfo.DifficultyEnum.Easy:
 				difficultyModifier = 0.8f;
 				complaintThreshold = 3f;
 				printerStatus.maxPaper = 750;
 				printerStatus.paperLevel = 750;
 				break;
-			case SceneChangeInfo.Difficulty.Hard:
+			case SceneChangeInfo.DifficultyEnum.Hard:
 				difficultyModifier = 1.2f;
 				complaintThreshold = 5f;
 				printerStatus.maxPaper = 250;
 				printerStatus.paperLevel = 250;
 				break;
-			case SceneChangeInfo.Difficulty.Normal:
+			case SceneChangeInfo.DifficultyEnum.Normal:
 			default:
 				break;
 		}

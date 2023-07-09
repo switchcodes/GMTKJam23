@@ -7,6 +7,6 @@ public class TestSceneSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(SceneChangeInfo.Information.ToString());
+        Debug.Log(SceneChangeInfo.Difficulty.ToString());
     }
 }

@@ -11,11 +11,11 @@ public class ShowDifficulty : MonoBehaviour
     [SerializeField] private Button hardDifficulty;
     void Start()
     {
-        switch (SceneChangeInfo.Information)
+        switch (SceneChangeInfo.Difficulty)
         {
-            case SceneChangeInfo.Difficulty.Easy: easyDifficulty.Select(); break;
-            case SceneChangeInfo.Difficulty.Normal: normalDifficulty.Select(); break;
-            case SceneChangeInfo.Difficulty.Hard: hardDifficulty.Select(); break;
+            case SceneChangeInfo.DifficultyEnum.Easy: easyDifficulty.Select(); break;
+            case SceneChangeInfo.DifficultyEnum.Normal: normalDifficulty.Select(); break;
+            case SceneChangeInfo.DifficultyEnum.Hard: hardDifficulty.Select(); break;
         }
     }
 }

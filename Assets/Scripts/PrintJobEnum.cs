@@ -1,19 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 [Serializable]
 public enum PrintJobEnum
 {
-	CounterfeitBills,
+	Counterfeit,
 	FakeNews,
 	MissingCat,
 	ElectionCampaign,
 	Newspaper,
 	CeaseAndDesist,
 	JobTermination,
-	LordshipCertificate,
+	LordCertificate,
 	PianoNotes,
 	Confidential
 }

@@ -6,11 +6,11 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField]
     private int sceneId;
 
-    private SceneChangeInfo.Difficulty _tempValue;
+    private SceneChangeInfo.DifficultyEnum _tempValue;
 
     private void Start()
     {
-        _tempValue = SceneChangeInfo.Information;
+        _tempValue = SceneChangeInfo.Difficulty;
     }
 
     public void LoadScene()
@@ -20,22 +20,22 @@ public class SceneSwitcher : MonoBehaviour
 
     public void CancelOptions()
     {
-        SceneChangeInfo.Information = _tempValue;
+        SceneChangeInfo.Difficulty = _tempValue;
         LoadScene();
     }
     
     public void SetEasyDifficulty()
     {
-        SceneChangeInfo.Information = SceneChangeInfo.Difficulty.Easy;
+        SceneChangeInfo.Difficulty = SceneChangeInfo.DifficultyEnum.Easy;
     }
     
     public void SetNormalDifficulty()
     {
-        SceneChangeInfo.Information = SceneChangeInfo.Difficulty.Normal;
+        SceneChangeInfo.Difficulty = SceneChangeInfo.DifficultyEnum.Normal;
     }
     
     public void SetHardDifficulty()
     {
-        SceneChangeInfo.Information = SceneChangeInfo.Difficulty.Hard;
+        SceneChangeInfo.Difficulty = SceneChangeInfo.DifficultyEnum.Hard;
     }
 }
