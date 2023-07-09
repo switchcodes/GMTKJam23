@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7993448402905375512}
   - component: {fileID: 4798456385887881335}
   - component: {fileID: 1778634068704085199}
+  - component: {fileID: 2247711612187712656}
   m_Layer: 5
   m_Name: ButtonSprite
   m_TagString: Untagged
@@ -287,6 +288,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &2247711612187712656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136523896186023672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &5266257021051782256
 GameObject:
   m_ObjectHideFlags: 0

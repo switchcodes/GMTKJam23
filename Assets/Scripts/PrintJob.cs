@@ -1,27 +1,31 @@
-public class PrintJob {
-	public string name;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
+public class PrintJob: MonoBehaviour {
+	
+	public string jobName;
+	public string fileName;
 	public int paper;
 	public int cyan;
 	public int magenta;
 	public int yellow;
 	public int black;
-	public int moralityModifier;
-	public int satisfactionModifier;
+	public float moralityModifier;
+	public float satisfactionModifier;
 	public int timeToComplete;
+	public bool illegal;
+	public Sprite sprite;
+	public Image imageComponent;
 
-	public PrintJob(string name, int paper, int cyan, int magenta, int yellow, int black, int moralityModifier,
-		int satisfactionModifier, int timeToComplete) {
-		this.name = name;
-		this.paper = paper;
-		this.cyan = cyan;
-		this.magenta = magenta;
-		this.yellow = yellow;
-		this.black = black;
-		this.moralityModifier = moralityModifier;
-		this.satisfactionModifier = satisfactionModifier;
-		this.timeToComplete = timeToComplete;
+	public TextMeshProUGUI title;
+    
+	public void Start() {
+		if (imageComponent && sprite) imageComponent.sprite = sprite;
+		if (title) title.text = jobName;
 	}
-
+	
 	public bool IsBlackAndWhite() {
 		return cyan == 0 && magenta == 0 && yellow == 0;
 	}

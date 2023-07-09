@@ -376,6 +376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7549755326296192426}
   - component: {fileID: 2892081185264344112}
+  - component: {fileID: 5757565792310879564}
   m_Layer: 5
   m_Name: Tab1
   m_TagString: Untagged
@@ -454,6 +455,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &5757565792310879564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2457408878968955436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &3745017819298570196
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1038293070692847531}
   - component: {fileID: 2461523995483718616}
+  - component: {fileID: 7578499594864766335}
   m_Layer: 5
   m_Name: Tab2
   m_TagString: Untagged
@@ -754,6 +771,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &7578499594864766335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580289657766181871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &6732686527970809048
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class JobController : MonoBehaviour {
 	[Header("Components")]
@@ -6,6 +9,8 @@ public class JobController : MonoBehaviour {
 	public PrinterStatus printerStatus;
 	public MoralMeter moralMeter;
 	public GameObject notificationPanel;
+	public GameObject queueFilePrefab;
+	public GameObject queueFileParent;
 
 	[Header("Modifiers")] 
 	public float difficultyModifier = 1f;
@@ -13,7 +18,6 @@ public class JobController : MonoBehaviour {
 
 	[Header("Debug")]
 	public bool overrideDifficulty = false;
-	public bool ignoreJobPresence = false;
 
 	private int _complainedAboutPaper = 0;
 	private int _complainedAboutCyan = 0;
@@ -21,6 +25,9 @@ public class JobController : MonoBehaviour {
 	private int _complainedAboutYellow = 0;
 	private int _complainedAboutBlack = 0;
 
+	
+	public readonly Dictionary<string, PrintJob> jobs = new();
+	public readonly Dictionary<string, QueueFile> queueFiles = new();
 	public PrintJob currentJob;
 
 	// Start is called before the first frame update
@@ -43,19 +50,6 @@ public class JobController : MonoBehaviour {
 			default:
 				break;
 		}
-
-		if (ignoreJobPresence) {
-			currentJob = new PrintJob(
-				"Test Job",
-				3,
-				1,
-				0,
-				1,
-				2,
-				10,
-				10,
-				60);
-		}
 	}
 
 	// Update is called once per frame
@@ -76,6 +70,35 @@ public class JobController : MonoBehaviour {
 			case <= 0:
 				TriggerOutOfSatisfaction();
 				break;
+		}
+	}
+
+	public void AddJobToQueue(PrintJob job) {
+		jobs.Add(job.fileName, job);
+		var queueFileInstance = Instantiate(queueFilePrefab, queueFileParent.transform);
+		var file = queueFileInstance.GetComponent<QueueFile>();
+		file.fileName = job.fileName;
+		file.SetIsActive(false);
+		file.jobController = this;
+		queueFiles.Add(job.fileName, file);
+		if (!currentJob) SelectJob(file);
+	}
+
+	public void SelectJob(QueueFile job) {
+		currentJob = jobs.TryGetValue(job.fileName, out var job1) ? job1 : null;
+		foreach (var (_, printJob) in jobs) {
+			printJob.gameObject.SetActive(false);
+		}
+		
+		foreach (var (_, queueFile) in queueFiles) {
+			queueFile.SetIsActive(false);
+		}
+
+		if (!currentJob) return;
+		{
+			currentJob.gameObject.SetActive(true);
+			queueFiles.TryGetValue(currentJob.fileName, out var queueFile);
+			if (queueFile) queueFile.SetIsActive(true);
 		}
 	}
 
@@ -104,7 +127,7 @@ public class JobController : MonoBehaviour {
         
 		moralMeter.moralLevel += currentJob.moralityModifier * difficultyModifier * (pagesPrinted / currentJob.paper);
 		moralMeter.satisfactionLevel += currentJob.satisfactionModifier * difficultyModifier * (pagesPrinted / currentJob.paper) * inkSatisfactionModifier;
-		completeJob();
+		CompleteJob();
 		logger.Log("Printed");
 	}
 
@@ -119,7 +142,7 @@ public class JobController : MonoBehaviour {
 
 		moralMeter.moralLevel -= 0.5f * currentJob.moralityModifier * difficultyModifier;
 		moralMeter.satisfactionLevel -= 0.5f * currentJob.satisfactionModifier * difficultyModifier;
-		completeJob();
+		CompleteJob();
 		logger.Log("Caused paper jam");
 	}
 
@@ -139,7 +162,7 @@ public class JobController : MonoBehaviour {
 
 		moralMeter.moralLevel -= currentJob.moralityModifier * difficultyModifier;
 		moralMeter.satisfactionLevel -= currentJob.satisfactionModifier * difficultyModifier;
-		completeJob();
+		CompleteJob();
 		logger.Log("Refused to print");
 	}
 
@@ -238,8 +261,23 @@ public class JobController : MonoBehaviour {
 		notificationPanel.SetActive(false);
 	}
 
-	private void completeJob() {
-		if (!ignoreJobPresence) currentJob = null;
+	private void CompleteJob() {
+		// remove print job object
+		jobs.Remove(currentJob.fileName);
+		Destroy(currentJob.gameObject);
+		
+		// remove print job from queue
+		queueFiles.TryGetValue(currentJob.fileName, out var file);
+		if (file) {
+			Destroy(file.gameObject);
+			queueFiles.Remove(currentJob.fileName);	
+		}
+
+		if (queueFiles.Values.Count > 0) {
+			// select the next job in the queue
+			var newJob = queueFiles.Values.First();
+			SelectJob(newJob);
+		}
 		printerStatus.printCount++;
 	}
 

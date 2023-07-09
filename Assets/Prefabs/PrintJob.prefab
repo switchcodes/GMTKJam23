@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7728571057580085419}
   - component: {fileID: 7451125243926932759}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,18 +25,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3727861805297656137}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.026176924, w: 0.99965733}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1518404444277639252}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2}
-  m_SizeDelta: {x: -8, y: -4}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: -60, y: -70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7728571057580085419
 CanvasRenderer:
@@ -66,18 +66,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TESTSETESTESTESTSETESTSETSETSETSETSETSETSETESTSETSETESTESTESTESTSTESTEESTETSEsjlkfdj;dasldfjldaskj;flsakd;jfjkdsalfhdjsabfeuiwheoifhcniosdnbvjkdlsaabfdabfndoisnbvdisaohfdksjafnldsnafkldnsabfjnaslfbndslkafbdlksabfldsabfdjlasbfdjlsabfljdasbfljd
+  m_text: Cease and desist
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c5c34b24fd4fd64ca5d449ea31d0d41, type: 2}
-  m_sharedMaterial: {fileID: -9060914691028968281, guid: 2c5c34b24fd4fd64ca5d449ea31d0d41,
+  m_fontAsset: {fileID: 11400000, guid: 755b1762286cfaa4d95053dfdc994096, type: 2}
+  m_sharedMaterial: {fileID: -9060914691028968281, guid: 755b1762286cfaa4d95053dfdc994096,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4282598211
+  m_fontColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -94,15 +94,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 12
+  m_fontSizeBase: 1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 8
+  m_fontSizeMax: 12
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 837929c0c89d77044b63d7cb042077a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -221,6 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1518404444277639252}
+  - component: {fileID: 2384178681970347144}
   m_Layer: 5
   m_Name: PrintJob
   m_TagString: Untagged
@@ -235,7 +236,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8380079478693046455}
-  m_LocalRotation: {x: 0, y: 0, z: 0.026176924, w: 0.99965733}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -245,8 +246,34 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00009918213, y: -19.725245}
-  m_SizeDelta: {x: 150, y: 75}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 2.3892212}
+  m_SizeDelta: {x: 0, y: 92.108}
   m_Pivot: {x: 0.5275016, y: 1.0247626}
+--- !u!114 &2384178681970347144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380079478693046455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da048e22e0c890c48a22070fa30c08d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jobName: 
+  fileName: 
+  paper: 0
+  cyan: 0
+  magenta: 0
+  yellow: 0
+  black: 0
+  moralityModifier: 0
+  satisfactionModifier: 0
+  timeToComplete: 0
+  illegal: 0
+  sprite: {fileID: 0}
+  imageComponent: {fileID: 4267036783805858290}
+  title: {fileID: 7451125243926932759}

@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6ff84c7c4780f41b255963f4e5560a, type: 3}
+  m_Name: SpriteDictionary
+  m_EditorClassIdentifier: 
+  dictionaries:
+  - key: 5
+    value: {fileID: 21300000, guid: 837929c0c89d77044b63d7cb042077a8, type: 3}
+    titles:
+    - Cease and Desist
+    - C&D
+    - STOP IMMEDIATELY
+    - ILLEGAL SHARING OF CONTENT
+    - COPYRIGHT STRIKE
+    minMoralModifier: -2
+    maxMoralModifier: -1
+    minPages: 2
+    maxPages: 3
+    minCyan: 0
+    maxCyan: 0
+    minMagenta: 0
+    maxMagenta: 0
+    minYellow: 0
+    maxYellow: 0
+    minBlack: 1
+    maxBlack: 2
+    illegal: 0
+  - key: 7
+    value: {fileID: 21300000, guid: 4955f8f60160c124ba5e1505a4e700c6, type: 3}
+    titles:
+    - Congrats on becoming a lord
+    - You're now the owner of scottish land
+    - Hello, Lord {name}
+    - Dear Lord,
+    - Lordship Certificate
+    minMoralModifier: -1.5
+    maxMoralModifier: -0.5
+    minPages: 1
+    maxPages: 2
+    minCyan: 1
+    maxCyan: 2
+    minMagenta: 1
+    maxMagenta: 2
+    minYellow: 1
+    maxYellow: 2
+    minBlack: 1
+    maxBlack: 2
+    illegal: 1
+  - key: 9
+    value: {fileID: 21300000, guid: 6d4867092068c7744bdb72d740dfe472, type: 3}
+    titles:
+    - TOP SECRET
+    - CONFIDENTIAL - DO NOT PRINT
+    - TO BE VIEWED ONLY BY AUTHORIZED PERSONELL
+    - VERY SECRET!!!
+    minMoralModifier: -2
+    maxMoralModifier: -1
+    minPages: 1
+    maxPages: 3
+    minCyan: 0
+    maxCyan: 0
+    minMagenta: 0
+    maxMagenta: 0
+    minYellow: 0
+    maxYellow: 0
+    minBlack: 1
+    maxBlack: 2
+    illegal: 1
+  - key: 3
+    value: {fileID: 21300000, guid: 8d22c8dd2a20a1647b3a623ca2389a90, type: 3}
+    titles:
+    - '{name} FOR PRESIDENT'
+    - VOTE NOW!!!
+    - WE ARE THE ONES FOR YOU!
+    - DON'T VOTE THEM, VOTE US!
+    - ARE YOU READY FOR A NEW 'MURICA???
+    minMoralModifier: -1
+    maxMoralModifier: 1
+    minPages: 2
+    maxPages: 3
+    minCyan: 1
+    maxCyan: 2
+    minMagenta: 1
+    maxMagenta: 2
+    minYellow: 1
+    maxYellow: 2
+    minBlack: 2
+    maxBlack: 3
+    illegal: 0
+  - key: 1
+    value: {fileID: 21300000, guid: 59f9ab561f374334a8d8c9768ee4a9f0, type: 3}
+    titles:
+    - ELON MUSK NOW KING OF THE UK
+    - HOW THE MOON LANDING WAS STAGED
+    - Solid proofs for flat earth (number 3 will shock you)
+    - Why earth is actually donut shaped
+    minMoralModifier: -2
+    maxMoralModifier: -0.5
+    minPages: 2
+    maxPages: 4
+    minCyan: 0
+    maxCyan: 1
+    minMagenta: 0
+    maxMagenta: 1
+    minYellow: 0
+    maxYellow: 1
+    minBlack: 2
+    maxBlack: 3
+    illegal: 1
+  - key: 6
+    value: {fileID: 21300000, guid: 8eaa40c77d02b8f4485c6a6b85e76e21, type: 3}
+    titles:
+    - We found someone better...
+    - It's not us, it's you
+    - Termination of your current position
+    - We have to let you go...
+    - When a door closes, a new opens. Good luck with your next job!
+    minMoralModifier: -1.5
+    maxMoralModifier: -0.51
+    minPages: 1
+    maxPages: 1
+    minCyan: 0
+    maxCyan: 0
+    minMagenta: 0
+    maxMagenta: 0
+    minYellow: 0
+    maxYellow: 0
+    minBlack: 1
+    maxBlack: 2
+    illegal: 0
+  - key: 2
+    value: {fileID: 21300000, guid: bbbd5ac8da7b8814fb717d935da14376, type: 3}
+    titles:
+    - Please find my cat!
+    - Poor kitty is all alone
+    - Missing cat!
+    - Call us if you see this cat!
+    minMoralModifier: 1
+    maxMoralModifier: 2
+    minPages: 1
+    maxPages: 1
+    minCyan: 2
+    maxCyan: 3
+    minMagenta: 2
+    maxMagenta: 3
+    minYellow: 2
+    maxYellow: 3
+    minBlack: 1
+    maxBlack: 2
+    illegal: 0
+  - key: 0
+    value: {fileID: 21300000, guid: b0b41fada8418dc4085f8cba0c533f58, type: 3}
+    titles:
+    - $ 50
+    - $ 100
+    - $ 500
+    minMoralModifier: -1.5
+    maxMoralModifier: -3
+    minPages: 1
+    maxPages: 5
+    minCyan: 2
+    maxCyan: 3
+    minMagenta: 2
+    maxMagenta: 3
+    minYellow: 2
+    maxYellow: 3
+    minBlack: 1
+    maxBlack: 2
+    illegal: 1
+  - key: 8
+    value: {fileID: 21300000, guid: d8666718fd68ceb41abc491ce6d42d3e, type: 3}
+    titles:
+    - Beethoven - Nyan Cat in C Major
+    - Mozart - Tokyo Drift in D Minor
+    - Bach - 69th symfony
+    - Rick Astley - Never gonna give you up
+    - Shrek Theme Song
+    minMoralModifier: 1
+    maxMoralModifier: 2
+    minPages: 1
+    maxPages: 3
+    minCyan: 0
+    maxCyan: 0
+    minMagenta: 0
+    maxMagenta: 0
+    minYellow: 0
+    maxYellow: 0
+    minBlack: 1
+    maxBlack: 2
+    illegal: 0
+  - key: 4
+    value: {fileID: 21300000, guid: 92f64b9dfc8a4c242a807e8366718c6b, type: 3}
+    titles:
+    - The 10 best games of the GMTK Jam 2023
+    - Chaos due to printers gone rogue
+    - New VIrus Outbreak - Scientist say deadliest yet
+    minMoralModifier: 0.5
+    maxMoralModifier: 1
+    minPages: 3
+    maxPages: 5
+    minCyan: 0
+    maxCyan: 1
+    minMagenta: 0
+    maxMagenta: 1
+    minYellow: 0
+    maxYellow: 1
+    minBlack: 1
+    maxBlack: 3
+    illegal: 0

@@ -1118,6 +1118,7 @@ GameObject:
   - component: {fileID: 890858238}
   - component: {fileID: 890858242}
   - component: {fileID: 890858243}
+  - component: {fileID: 890858244}
   m_Layer: 5
   m_Name: CancelBtn
   m_TagString: Untagged
@@ -1309,6 +1310,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &890858244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890858236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &959094474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1389,7 @@ GameObject:
   - component: {fileID: 984416597}
   - component: {fileID: 984416601}
   - component: {fileID: 984416602}
+  - component: {fileID: 984416603}
   m_Layer: 5
   m_Name: NormalBtnToggle
   m_TagString: Untagged
@@ -1564,6 +1581,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &984416603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984416595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1214139660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,6 +1792,7 @@ GameObject:
   - component: {fileID: 1475028969}
   - component: {fileID: 1475028971}
   - component: {fileID: 1475028970}
+  - component: {fileID: 1475028972}
   m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
@@ -1825,6 +1858,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475028968}
   m_CullTransparentMesh: 1
+--- !u!114 &1475028972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475028968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1479044699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1888,7 @@ GameObject:
   - component: {fileID: 1479044701}
   - component: {fileID: 1479044705}
   - component: {fileID: 1479044706}
+  - component: {fileID: 1479044707}
   m_Layer: 5
   m_Name: SaveBtn
   m_TagString: Untagged
@@ -2047,6 +2096,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1479044707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479044699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1633001623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2232,7 @@ GameObject:
   - component: {fileID: 1792678526}
   - component: {fileID: 1792678531}
   - component: {fileID: 1792678530}
+  - component: {fileID: 1792678532}
   m_Layer: 5
   m_Name: EasyBtnToggle
   m_TagString: Untagged
@@ -2359,6 +2424,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa10b2faf3cd994f8b5a65ffeec1c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1792678532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792678524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &2078810050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2454,7 @@ GameObject:
   - component: {fileID: 2078810052}
   - component: {fileID: 2078810056}
   - component: {fileID: 2078810057}
+  - component: {fileID: 2078810058}
   m_Layer: 5
   m_Name: HardBtnToggle
   m_TagString: Untagged
@@ -2565,3 +2646,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2078810058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078810050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105ecbee95ec689429b7707376715dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4f987c69a0b812f4398d62d94921866c, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
