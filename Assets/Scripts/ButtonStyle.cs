@@ -37,4 +37,10 @@ public class ButtonStyle : MonoBehaviour
     {
         Application.OpenURL("https://worseproductions.itch.io/");
     }
+    
+    public void StopCreditMusic()
+    {
+        GameObject.FindGameObjectWithTag("AudioManagerLoaded").transform.Find("BgCredit").GetComponent<AudioSource>().Stop();
+        GameObject.FindGameObjectWithTag("AudioManagerLoaded").transform.Find("BgOst").GetComponent<AudioSource>().Play();
+    }
 }
