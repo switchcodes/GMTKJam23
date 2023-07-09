@@ -234,7 +234,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.services.leaderboards": {
-      "version": "file:C:/Users/floki/Downloads/com.unity.services.leaderboards-1.0.0-exp.1.tgz",
+      "version": "file:C:/Users/Meteo/Downloads/com.unity.services.leaderboards-1.0.0-exp.1.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
