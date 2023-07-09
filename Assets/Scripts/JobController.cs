@@ -26,6 +26,7 @@ public class JobController : MonoBehaviour {
 	public Animation screenShake;
 	public GameObject timerBar;
 	public TextMeshProUGUI timerText;
+	public GameObject pausePanel;
 	
 	private RectTransform _timerBarTransform;
 	private Image _timerBarImage;
@@ -101,6 +102,10 @@ public class JobController : MonoBehaviour {
 
 	// Update is called once per frame
 	private void Update() {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			pausePanel.SetActive(true);
+			Time.timeScale = 0;
+		}
 		var currentJobsInQueue = queueFiles.Count;
 		var isQueueAlmostFull = currentJobsInQueue > maxActiveJobs * 0.75f;
 		if (isQueueAlmostFull) {
