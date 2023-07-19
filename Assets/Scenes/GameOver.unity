@@ -294,8 +294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.98, y: -23}
-  m_SizeDelta: {x: 959.98, y: 35}
+  m_AnchoredPosition: {x: 959.98, y: -51.828735}
+  m_SizeDelta: {x: 959.98, y: 28.5854}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!114 &70004593
 MonoBehaviour:
@@ -750,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 490}
+  m_AnchoredPosition: {x: 0, y: 490}
   m_SizeDelta: {x: -960, y: -1030}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652416701
@@ -890,10 +890,10 @@ RectTransform:
   m_Father: {fileID: 1633001627}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_SizeDelta: {x: 1900, y: 1060}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684093625
 MonoBehaviour:
@@ -962,7 +962,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1623,10 +1623,10 @@ RectTransform:
   m_Father: {fileID: 1633001627}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446337988
 MonoBehaviour:
@@ -1958,13 +1958,13 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1633001626
 Canvas:
   m_ObjectHideFlags: 0
@@ -1974,7 +1974,7 @@ Canvas:
   m_GameObject: {fileID: 1633001623}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_Camera: {fileID: 864520515}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
@@ -1997,7 +1997,7 @@ RectTransform:
   m_GameObject: {fileID: 1633001623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1446337987}
@@ -2008,8 +2008,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1633001628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,8 +2212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 959.98, y: 79}
-  m_SizeDelta: {x: 959.98, y: 35}
+  m_AnchoredPosition: {x: 959.98, y: 42.95923}
+  m_SizeDelta: {x: 959.98, y: 47.3937}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!114 &1774227248
 MonoBehaviour:
@@ -2235,7 +2235,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: you made your user angry and got destroyed
+  m_text: 'you got caught printing illegal documents
+
+    look out for the police
+    on the <color=black>cam</color> tab if your morality score is low'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c5c34b24fd4fd64ca5d449ea31d0d41, type: 2}
   m_sharedMaterial: {fileID: -9060914691028968281, guid: 2c5c34b24fd4fd64ca5d449ea31d0d41,
@@ -2348,7 +2351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -39.9}
+  m_AnchoredPosition: {x: -10, y: -39.899994}
   m_SizeDelta: {x: 300, y: 31.6164}
   m_Pivot: {x: 1, y: 1.0000001}
 --- !u!114 &1926574518
@@ -3342,6 +3345,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3320681419222963652, guid: cab11be8a1d514d43ab6071471770c99,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.913101
+      objectReference: {fileID: 0}
     - target: {fileID: 3347965892541569355, guid: cab11be8a1d514d43ab6071471770c99,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3440,6 +3448,11 @@ PrefabInstance:
     - target: {fileID: 3574167597248418748, guid: cab11be8a1d514d43ab6071471770c99,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574167597248418748, guid: cab11be8a1d514d43ab6071471770c99,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3643399487644382358, guid: cab11be8a1d514d43ab6071471770c99,

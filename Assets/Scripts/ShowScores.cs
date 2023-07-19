@@ -31,14 +31,14 @@ public class ShowScores : MonoBehaviour {
 		};
 
 		var reason = GameOverCondition switch {
-			GameOverConditions.CAUGHT => "you got caught printing illegal documents",
-			GameOverConditions.DESTROYED => "you made your user angry and got destroyed",
-			GameOverConditions.OUT_OF_TIME => "you got overloaded with files",
+			GameOverConditions.CAUGHT => "you got caught printing illegal documents\nlook out for the police on the <color=black>cam</color> tab if your morality score is low",
+			GameOverConditions.DESTROYED => "you made your user angry and got destroyed\nkeep an eye on your satisfaction on the <color=black>stats</color> tab",
+			GameOverConditions.OUT_OF_TIME => "you got overloaded with files\nkeep an eye on your <color=black>queue</color>",
 			_ => throw new ArgumentOutOfRangeException()
 		};
 
 		reasonTMP.text = reason;
-		scoreTMP.text = $"You printed <color=#97FF75>{Score}</color> pages!";
+		scoreTMP.text = $"You completed <color=#97FF75>{Score}</color> jobs!";
 		statsTMP.text =
 			$"Morality: {moral}\nSatisfaction: {satisfaction}\nDifficulty: {difficulty}";
 	}

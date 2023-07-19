@@ -34,7 +34,7 @@ public class PrinterStatus : MonoBehaviour {
 		yellowLevelBar.localScale = new Vector3(1, yellowLevel / 100f, 1);
 		blackLevelBar.localScale = new Vector3(1, blackLevel / 100f, 1);
 		
-		printCountText.text = "Print count: " + printCount;
+		printCountText.text = "Job count: " + printCount;
 	}
 
 	public bool IsOperational() {

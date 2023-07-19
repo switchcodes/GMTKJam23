@@ -35,6 +35,14 @@ public class CursorSwitcher : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		Cursor.SetCursor(null, hotSpot, cursorMode);
 	}
 
+	public void OnDestroy() {
+		Cursor.SetCursor(null, hotSpot, cursorMode);
+	}
+
+	public void OnDisable() {
+		Cursor.SetCursor(null, hotSpot, cursorMode);
+	}
+
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		Debug.Log(gameObject.tag);

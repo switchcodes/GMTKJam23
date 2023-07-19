@@ -17,7 +17,7 @@ MonoBehaviour:
     value: {fileID: 21300000, guid: 837929c0c89d77044b63d7cb042077a8, type: 3}
     titles:
     - Cease and Desist
-    - C&D
+    - LAST WARNING - STOP
     - STOP IMMEDIATELY
     - ILLEGAL SHARING OF CONTENT
     - COPYRIGHT STRIKE
@@ -37,11 +37,11 @@ MonoBehaviour:
   - key: 7
     value: {fileID: 21300000, guid: 4955f8f60160c124ba5e1505a4e700c6, type: 3}
     titles:
-    - Congrats on becoming a lord
-    - You're now the owner of scottish land
-    - Hello, Lord {name}
-    - Dear Lord,
-    - Lordship Certificate
+    - Congrats on becoming a lord (REAL)
+    - You're now the owner of scottish land (NO SCAM)
+    - (NOT A SCAM) Hello, Lord {name}
+    - (LEGIT) Dear Lord,
+    - REAL Lordship Certificate
     minMoralModifier: -1.5
     maxMoralModifier: -0.5
     minPages: 1
@@ -163,6 +163,7 @@ MonoBehaviour:
     - $ 50
     - $ 100
     - $ 500
+    - $ 420
     minMoralModifier: -1.5
     maxMoralModifier: -3
     minPages: 1
@@ -203,6 +204,8 @@ MonoBehaviour:
     - The 10 best games of the GMTK Jam 2023
     - Chaos due to printers gone rogue
     - New VIrus Outbreak - Scientist say deadliest yet
+    - Morally Tainted 884th overall in GMTK Jam 2023!
+    - '"I overscoped" wins in overall ratings in GMTK Jam 2023!'
     minMoralModifier: 0.5
     maxMoralModifier: 1
     minPages: 3

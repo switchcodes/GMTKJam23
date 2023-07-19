@@ -26,7 +26,7 @@ public class Leaderboard : MonoBehaviour {
 			var scoresResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(LeaderboardId);
 			SetTexts(scoresResponse);
 		}
-		catch (LeaderboardsException e) {
+		catch (LeaderboardsException) {
 			// user does not have a score yet
 			await LeaderboardsService.Instance.AddPlayerScoreAsync(LeaderboardId, Score);
 			var scoresResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(LeaderboardId);
@@ -37,7 +37,7 @@ public class Leaderboard : MonoBehaviour {
 	private void SetTexts(LeaderboardEntry scoresResponse) {
 		playerNameText.text = $"Player: <color=#97FF75>{scoresResponse.PlayerName}</color>";
 		highScoreText.text = $"Highscore: <color=#97FF75>{scoresResponse.Score}</color>";
-		if (!(Score > scoresResponse.Score)) {
+		if (!(Score < scoresResponse.Score)) {
 			SubmitScore(Score);
 			newHighScoreText.SetActive(true);
 			highScoreText.text = $"Highscore: <color=#97FF75>{Score}</color>";

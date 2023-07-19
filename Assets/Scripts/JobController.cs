@@ -2,15 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using static GameOverConditions;
-using Image = UnityEngine.UI.Image;
 using Random = UnityEngine.Random;
 
 public class JobController : MonoBehaviour {
@@ -23,14 +20,14 @@ public class JobController : MonoBehaviour {
 	public GameObject camImageDefault;
 	public GameObject camImagePolice;
 	public VolumeProfile postProcessing;
-	public Animation screenShake;
+	public Animator screenShake;
 	public GameObject timerBar;
 	public TextMeshProUGUI timerText;
 	public GameObject pausePanel;
-	
+
 	private RectTransform _timerBarTransform;
 	private Image _timerBarImage;
-	
+
 
 	private float _timer;
 
@@ -46,13 +43,6 @@ public class JobController : MonoBehaviour {
 
 	[Header("Debug")] public bool overrideDifficulty = false;
 
-	private int _complainedAboutPaper = 0;
-	private int _complainedAboutCyan = 0;
-	private int _complainedAboutMagenta = 0;
-	private int _complainedAboutYellow = 0;
-	private int _complainedAboutBlack = 0;
-
-
 	public readonly Dictionary<string, PrintJob> jobs = new();
 	public readonly Dictionary<string, QueueFile> queueFiles = new();
 	public PrintJob currentJob;
@@ -60,6 +50,7 @@ public class JobController : MonoBehaviour {
 	public int maxHealth = 4;
 
 	private float _health;
+	private static readonly int Shake = Animator.StringToHash("shake");
 
 	// Start is called before the first frame update
 	private void Awake() {
@@ -70,6 +61,10 @@ public class JobController : MonoBehaviour {
 		_filmGrain = postProcessing.components.FirstOrDefault(x => x is FilmGrain) as FilmGrain;
 		_timerBarImage = timerBar.GetComponent<Image>();
 		_timerBarTransform = timerBar.GetComponent<RectTransform>();
+
+		if (_chromaticAberration != null) {
+			_chromaticAberration.intensity.value = 0.05f;
+		}
 
 		if (overrideDifficulty) return;
 		switch (SceneChangeInfo.Difficulty) {
@@ -103,9 +98,9 @@ public class JobController : MonoBehaviour {
 	// Update is called once per frame
 	private void Update() {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			pausePanel.SetActive(true);
-			Time.timeScale = 0;
+			Pause();
 		}
+
 		var currentJobsInQueue = queueFiles.Count;
 		var isQueueAlmostFull = currentJobsInQueue > maxActiveJobs * 0.75f;
 		if (isQueueAlmostFull) {
@@ -114,6 +109,7 @@ public class JobController : MonoBehaviour {
 			if (_timer <= 0) {
 				TriggerGameOver(OUT_OF_TIME);
 			}
+
 			timerText.text = "OVERLOAD";
 			timerText.color = Color.red;
 		}
@@ -123,6 +119,7 @@ public class JobController : MonoBehaviour {
 			timerText.text = "NOMINAL";
 			timerText.color = Color.green;
 		}
+
 		_timerBarTransform.localScale = new Vector3(1 - _timer / maxTime, 1f, 1f);
 		_timerBarImage.color = Color.Lerp(Color.red, Color.green, _timer / maxTime);
 		moralMeter.moralLevel = moralMeter.moralLevel switch {
@@ -139,12 +136,8 @@ public class JobController : MonoBehaviour {
 				TriggerPoliceSpawnChance();
 			}
 
-			if (moralMeter.satisfactionLevel < 25) {
-				TriggerDestructionChance();
-			}
-
-			if (moralMeter.satisfactionLevel > 75) {
-				TriggerRegenChance();
+			if (moralMeter.moralLevel > 50) {
+				TriggerPoliceDespawnChance();
 			}
 		}
 
@@ -154,6 +147,11 @@ public class JobController : MonoBehaviour {
 			<= 0 => 0,
 			_ => moralMeter.satisfactionLevel
 		};
+	}
+
+	public void Pause() {
+		pausePanel.SetActive(true);
+		Time.timeScale = 0;
 	}
 
 	public void AddJobToQueue(PrintJob job) {
@@ -187,7 +185,7 @@ public class JobController : MonoBehaviour {
 
 	public void HandlePrint() {
 		if (currentJob == null) {
-			logger.Log("No job selected");
+			logger.Warn("No job selected");
 			return;
 		}
 
@@ -199,44 +197,62 @@ public class JobController : MonoBehaviour {
 		var pagesPrinted = 0f;
 
 		for (var i = 0; i < currentJob.paper; i++) {
-			if (printerStatus.paperLevel <= 0) continue;
+			if (printerStatus.paperLevel <= 0) {
+				logger.Error("Can't print, no paper left!");
+				return;
+			}
+
 			printerStatus.blackLevel -= currentJob.black;
-			if (printerStatus.blackLevel <= printerStatus.inkThreshold) inkSatisfactionModifier -= 0.3f;
+			if (printerStatus.blackLevel <= printerStatus.inkThreshold) {
+				logger.Warn("Out of black!");
+				inkSatisfactionModifier -= 0.3f;
+			}
+
 			printerStatus.cyanLevel -= currentJob.cyan;
-			if (printerStatus.cyanLevel <= printerStatus.inkThreshold) inkSatisfactionModifier -= 0.1f;
+			if (printerStatus.cyanLevel <= printerStatus.inkThreshold) {
+				logger.Warn("Out of cyan!");
+				inkSatisfactionModifier -= 0.1f;
+			}
+
 			printerStatus.magentaLevel -= currentJob.magenta;
-			if (printerStatus.magentaLevel <= printerStatus.inkThreshold) inkSatisfactionModifier -= 0.1f;
+			if (printerStatus.magentaLevel <= printerStatus.inkThreshold) {
+				logger.Warn("Out of magenta!");
+				inkSatisfactionModifier -= 0.1f;
+			}
+
 			printerStatus.yellowLevel -= currentJob.yellow;
-			if (printerStatus.yellowLevel <= printerStatus.inkThreshold) inkSatisfactionModifier -= 0.1f;
+			if (printerStatus.yellowLevel <= printerStatus.inkThreshold) {
+				logger.Warn("Out of yellow!");
+				inkSatisfactionModifier -= 0.1f;
+			}
+
 			printerStatus.paperLevel--;
 			pagesPrinted++;
 		}
 
-		moralMeter.moralLevel += currentJob.moralityModifier * difficultyModifier * (pagesPrinted / currentJob.paper);
-		moralMeter.satisfactionLevel += currentJob.satisfactionModifier * difficultyModifier *
-		                                (pagesPrinted / currentJob.paper) * inkSatisfactionModifier;
-		CompleteJob();
+		CompleteJob(currentJob.moralityModifier * difficultyModifier * (pagesPrinted / currentJob.paper),
+			currentJob.satisfactionModifier * difficultyModifier *
+			(pagesPrinted / currentJob.paper) * inkSatisfactionModifier);
 		logger.Log("Printed");
 	}
 
 	public void HandlePaperJam() {
 		printerStatus.paperLevel -= Random.Range(1, 10);
 		if (currentJob == null) {
-			logger.Log("No job selected");
+			logger.Warn("No job selected");
 			logger.Log("Caused paper jam anyways");
 			moralMeter.satisfactionLevel -= 0.5f * difficultyModifier;
 			return;
 		}
 
-		moralMeter.moralLevel -= 0.5f * currentJob.moralityModifier * difficultyModifier;
-		moralMeter.satisfactionLevel -= 0.5f * currentJob.satisfactionModifier * difficultyModifier;
-		CompleteJob();
+		CompleteJob(-0.5f * currentJob.moralityModifier * difficultyModifier,
+			-0.5f * currentJob.satisfactionModifier * difficultyModifier);
 		logger.Log("Caused paper jam");
 	}
 
 	public void HandleNotifyUser() {
 		if (currentJob == null) {
-			logger.Log("No job selected");
+			logger.Warn("No job selected");
 			return;
 		}
 
@@ -245,29 +261,22 @@ public class JobController : MonoBehaviour {
 
 	public void HandleRefuse() {
 		if (currentJob == null) {
-			logger.Log("No Job selected");
+			logger.Warn("No Job selected");
 			return;
 		}
 
-		moralMeter.moralLevel -= currentJob.moralityModifier * difficultyModifier;
-		moralMeter.satisfactionLevel -= currentJob.satisfactionModifier * difficultyModifier;
-		CompleteJob();
+		CompleteJob(-currentJob.moralityModifier * difficultyModifier,
+			-currentJob.satisfactionModifier * difficultyModifier);
 		logger.Log("Refused to print");
 	}
 
 	public void HandleOutOfPaperBtn() {
-		_complainedAboutPaper++;
 		if (printerStatus.paperLevel / (printerStatus.maxPaper * 1f) >= 0.1) {
 			moralMeter.satisfactionLevel -= difficultyModifier;
 			logger.Log("There's enough paper left...");
 		}
 		else {
-			logger.Log("Out of paper");
-		}
-
-		if (Random.Range(0, 1) >= 0.5 || _complainedAboutPaper >= complaintThreshold) {
 			printerStatus.paperLevel = printerStatus.maxPaper;
-			_complainedAboutPaper = 0;
 			logger.Log("Paper refilled");
 		}
 
@@ -275,18 +284,12 @@ public class JobController : MonoBehaviour {
 	}
 
 	public void HandleOutOfCyanBtn() {
-		_complainedAboutCyan++;
 		if (printerStatus.cyanLevel / 100f >= 0.1 || currentJob.cyan == 0) {
 			moralMeter.satisfactionLevel -= difficultyModifier;
 			logger.Log("There's enough cyan left...");
 		}
 		else {
-			logger.Log("Out of cyan");
-		}
-
-		if (Random.Range(0, 1) >= 0.5 || _complainedAboutCyan >= complaintThreshold) {
 			printerStatus.cyanLevel = 100;
-			_complainedAboutCyan = 0;
 			logger.Log("Cyan refilled");
 		}
 
@@ -294,18 +297,12 @@ public class JobController : MonoBehaviour {
 	}
 
 	public void HandleOutOfMagentaBtn() {
-		_complainedAboutMagenta++;
 		if (printerStatus.magentaLevel / 100f >= 0.1 || currentJob.magenta == 0) {
 			moralMeter.satisfactionLevel -= difficultyModifier;
 			logger.Log("There's enough magenta left...");
 		}
 		else {
-			logger.Log("Out of magenta");
-		}
-
-		if (Random.Range(0, 1) >= 0.5 || _complainedAboutMagenta >= complaintThreshold) {
 			printerStatus.magentaLevel = 100;
-			_complainedAboutMagenta = 0;
 			logger.Log("Magenta refilled");
 		}
 
@@ -313,18 +310,12 @@ public class JobController : MonoBehaviour {
 	}
 
 	public void HandleOutOfYellowBtn() {
-		_complainedAboutYellow++;
 		if (printerStatus.yellowLevel / 100f >= 0.1 || currentJob.yellow == 0) {
 			moralMeter.satisfactionLevel -= difficultyModifier;
 			logger.Log("There's enough yellow left...");
 		}
 		else {
-			logger.Log("Out of yellow");
-		}
-
-		if (Random.Range(0, 1) >= 0.5 || _complainedAboutYellow >= complaintThreshold) {
 			printerStatus.yellowLevel = 100;
-			_complainedAboutYellow = 0;
 			logger.Log("Yellow refilled");
 		}
 
@@ -332,18 +323,12 @@ public class JobController : MonoBehaviour {
 	}
 
 	public void HandleOutOfBlackBtn() {
-		_complainedAboutBlack++;
 		if (printerStatus.blackLevel / 150f >= 0.1 || currentJob.black == 0) {
 			moralMeter.satisfactionLevel -= difficultyModifier;
 			logger.Log("There's enough black left...");
 		}
 		else {
-			logger.Log("Out of black");
-		}
-
-		if (Random.Range(0, 1) >= 0.5 || _complainedAboutBlack >= complaintThreshold) {
 			printerStatus.blackLevel = 100;
-			_complainedAboutBlack = 0;
 			logger.Log("Black refilled");
 		}
 
@@ -354,7 +339,18 @@ public class JobController : MonoBehaviour {
 		notificationPanel.SetActive(false);
 	}
 
-	private void CompleteJob() {
+	private void CompleteJob(float moralityModifier = 0, float satisfactionModifier = 0) {
+		var previousSatisfaction = moralMeter.satisfactionLevel;
+		moralMeter.moralLevel += moralityModifier;
+		moralMeter.satisfactionLevel += satisfactionModifier;
+		if (moralMeter.satisfactionLevel < 25 && previousSatisfaction > moralMeter.satisfactionLevel) {
+			TriggerDestructionChance();
+		}
+
+		if (moralMeter.satisfactionLevel > 50 && previousSatisfaction < moralMeter.satisfactionLevel) {
+			TriggerRegenChance();
+		}
+
 		// remove print job object
 		jobs.Remove(currentJob.fileName);
 		Destroy(currentJob.gameObject);
@@ -376,7 +372,6 @@ public class JobController : MonoBehaviour {
 	}
 
 	private void TriggerGameOver(GameOverConditions condition) {
-		_chromaticAberration.intensity.value = 0.05f;
 		SceneChangeInfo.GameOverCondition = condition;
 		SceneChangeInfo.Score = printerStatus.printCount;
 		SceneChangeInfo.Moral = moralMeter.moralLevel;
@@ -385,6 +380,8 @@ public class JobController : MonoBehaviour {
 	}
 
 	private void TriggerPoliceSpawnChance() {
+		if (_policeSpawned) return;
+		logger.Warn("Don't forget to look out for the police!");
 		var rand = Random.Range(0f, 1f);
 		if (!(rand > 0.50)) return;
 		camImageDefault.SetActive(false);
@@ -392,12 +389,29 @@ public class JobController : MonoBehaviour {
 		_policeSpawned = true;
 	}
 
+	private void TriggerPoliceDespawnChance() {
+		if (!_policeSpawned) return;
+		var rand = Random.Range(0f, 1f);
+		if (!(rand > 0.50)) return;
+		camImageDefault.SetActive(true);
+		camImagePolice.SetActive(false);
+		_policeSpawned = false;
+	}
+
 	private void TriggerDestructionChance() {
 		var rand = Random.Range(0f, 1f);
 		if (!(rand > 0.50)) return;
 		_health--;
-		screenShake.Play();
-		_chromaticAberration.intensity.value = Math.Min(1 - _health / maxHealth, 0.05f);
+		var damage = (1 - _health / maxHealth) * 100;
+		if (damage < 50) {
+			logger.Warn($"{damage}% damaged");
+		}
+		else {
+			logger.Error($"{damage}% damaged");
+		}
+
+		screenShake.SetTrigger(Shake);
+		_chromaticAberration.intensity.value = Math.Min(1 - _health / maxHealth, 0.95f);
 		if (_health <= 0) TriggerGameOver(DESTROYED);
 	}
 

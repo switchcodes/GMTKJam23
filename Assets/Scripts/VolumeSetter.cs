@@ -16,7 +16,9 @@ public class VolumeSetter : MonoBehaviour
     public void showVolume()
     {
         shownVolume.text = Convert.ToInt32(_soundVolumeSlider.value * 100f).ToString() + "%";
-        foreach (Transform item in GameObject.FindGameObjectWithTag("AudioManagerLoaded").transform)
+        var items = GameObject.FindGameObjectWithTag("AudioManagerLoaded").transform;
+        if (!items) return;
+        foreach (Transform item in items)
         {
             if (item.gameObject.name == "ButtonSFX1" || item.gameObject.name == "ButtonSFX2")
             {
